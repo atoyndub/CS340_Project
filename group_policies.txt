@@ -1,0 +1,18 @@
+Team Name: Group 94
+Members:
+
+    Anthony Wagner - back end development with possible crossover
+    Matthew Harbinson - front end development with possible crossover
+
+Communication:
+
+    Primary mode of communication will be via OSU email
+    Meetings, when necessary, will occur on Discord
+    Generally responses should be within 24 hours. Responses during regular business hours M-F are not expected.
+    Version control will be using github
+
+Contingencies:
+
+    If a team member gets stuck: reach out to the other team member for assistance via email and/or request an additional meeting in a reasonable time frame (e.g. not sooner than 24-48 hours later) for troubleshooting while also pursuing assistance through regular channels (e.g. Piazza).
+    If a team member will be unable to meet a deadline for any reason (falling behind, personal emergency, etc) they should email the other team member as far in advance of the deadline as possible to notify and outline any additional work needing completion in order to meet the deadline in question.
+    If a team member fails to contribute their share for any given assignment then they should be willing to accept a greater share of work on future assignment(s) at the discretion of the opposite team member. The additional work assigned should be proportional to that missed and a reasonable, mutually agreeable arrangement should be negotiated between the group members.
