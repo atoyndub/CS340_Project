@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Home Menu</title>
+		<link rel="stylesheet" href="style.css" type="text/css">
+	</head>
+	<body>
+		<div>
+			<h1>Home Page</h1>
+		</div>
+		
+		<!--dynamically generated list of Persons-->
+		<div>
+			<h2>Persons</h2>
+			<div class="OverflowList">
+				<table>
+					
+						<thead>
+							<tr>
+								<th>First Name</th> <th>Last Name</th> <th>Dates</th>
+							</tr>
+						</thead>
+						<tbody id="HomePersonsList">
+							<!--rows below are those which will be dynamically populated in the future-->
+							<tr class="ListItem">
+								<td>Demo</td> <td>Person_1</td> <td>1900-1990</td>
+							</tr>
+							<tr class="ListItem">
+								<td>Demo</td> <td>Person_2</td> <td>1950-2015</td>
+							</tr>
+							<tr class="ListItem">
+								<td>Demo</td> <td>Person_3</td> <td>1980-</td>
+							</tr>
+							<tr class="ListItem">
+								<td>Demo</td> <td>Person_4</td> <td>1990-</td>
+							</tr>
+							<tr class="ListItem">
+								<td>Demo</td> <td>Person_5</td> <td>1995-</td>
+							</tr>
+						</tbody>
+				</table>
+			</div>
+		</div>
+
+		<!--dynamically generated list of places-->
+		<div>
+			<h2>Places</h2>
+			<div class="OverflowList">
+				<table>
+					<thead>
+						<tr>
+							<th>Place Name</th>
+						</tr>
+					</thead>
+					<tbody id="HomePlacesList">
+						<!--rows below are those which will be dynamically populated in the future-->
+						<tr class="ListItem">
+							<td>Port of Entry</td>
+						</tr>
+						<tr class="ListItem">
+							<td>Homestead</td>
+						</tr>
+						<tr class="ListItem">
+							<td>Family Ranch</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<!--dynamically generated list of events-->
+		<div>
+			<h2>Events</h2>
+			<div class="OverflowList">
+				<table>
+					<thead>
+						<tr class="ListItem">
+							<th>Event Name</th>
+						</tr>
+					</thead>
+					<tbody id="HomeEventsList">
+						<!--rows below are those which will be dynamically populated in the future-->
+						<tr class="ListItem">
+							<td>Oregon Trail Journey</td>
+						</tr>
+						<tr class="ListItem">
+							<td>Person_1 and Person_2 Wedding</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<!--javascript files-->
+		<script src="list_functions.js"></script>
+		<script src="home_load.js"></script>
+		
+	</body>
+</html>
+
