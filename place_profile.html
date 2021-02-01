@@ -15,50 +15,32 @@
 			<p>Here is some text to describe this place.</p>
 			<p>... And here is another paragraph of text to describe this place.</p>
 		</div>
-		<h2>Associated Persons</h2>
-		<table>
-					<thead>
-						<tr>
-							<th>First Name</th>
-							<th>Last Name</th>
-							<th>Date of Birth</th>
-							<th>Date of Death</th>
-							<th>Biography</th>
-							<th>Photo</th>
-							<th></th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>Michael</td>
-							<td>Connely</td>
-							<td>05/12/1960</td>
-							<td></td>
-							<td>Author</td>
-							<td></td>
-							<td><button>Delete</button><button>Update</button></td>
-						</tr>
-						<tr>
-							<td>John Grisham</td>
-							<td>Connely</td>
-							<td>05/12/1955</td>
-							<td></td>
-							<td>Author</td>
-							<td></td>
-							<td><button>Delete</button><button>Update</button></td>
-						</tr>
-						<tr>
-							<td>Daniel</td>
-							<td>Silva</td>
-							<td>06/22/1970</td>
-							<td></td>
-							<td>Author</td>
-							<td></td>
-							<td><button>Delete</button><button>Update</button></td>
-						</tr>
-					</tbody>
-
-				</table>
+		
+				<!--dynamically generated list of Persons associated with this Event-->
+        <div>
+            <h2>Associated Persons</h2>
+            <div class="OverflowList">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>First Name</th> <th>Last Name</th> <th>Dates</th>
+                        </tr>
+                    </thead>
+                    <tbody id="EventProfilePersonsList">
+                        <!--rows below are those which will be dynamically populated in the future-->
+                        <tr>
+                            <td>Demo</td> <td>Person_1</td> <td>1900-1990</td>
+                        </tr>
+                        <tr>
+                            <td>Demo</td> <td>Person_2</td> <td>1950-2015</td>
+                        </tr>
+                        <tr>
+                            <td>Demo</td> <td>Person_3</td> <td>1980-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
 			<div id="EventProfileGalleryImagesList">
 			<h2>Images</h2>
