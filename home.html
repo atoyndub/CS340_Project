@@ -6,9 +6,7 @@
 		<link rel="stylesheet" href="style.css" type="text/css">
 	</head>
 	<body>
-		<div>
-			<h1>Home Page</h1>
-		</div>
+		<h1>Home Page</h1>
 		
 		<div>
 			<h2>Persons</h2>
@@ -23,19 +21,19 @@
 					</thead>
 					<tbody id="HomePersonsList">
 						<!--rows below are those which will be dynamically populated in the future-->
-						<tr class="ListItem">
+						<tr>
 							<td>Demo</td> <td>Person_1</td> <td>1900-1990</td>
 						</tr>
-						<tr class="ListItem">
+						<tr>
 							<td>Demo</td> <td>Person_2</td> <td>1950-2015</td>
 						</tr>
-						<tr class="ListItem">
+						<tr>
 							<td>Demo</td> <td>Person_3</td> <td>1980-</td>
 						</tr>
-						<tr class="ListItem">
+						<tr>
 							<td>Demo</td> <td>Person_4</td> <td>1990-</td>
 						</tr>
-						<tr class="ListItem">
+						<tr>
 							<td>Demo</td> <td>Person_5</td> <td>1995-</td>
 						</tr>
 					</tbody>
@@ -45,8 +43,7 @@
 			<!--person filtering form-->
 			<form>
 				<fieldset>
-					<legend>Search Person</legend>
-					Search
+					<legend>Filter Persons</legend>
 					<label>
 						First Name
 						<input type="text" name="">
@@ -58,7 +55,7 @@
 					</label>
 					<br>
 					<label>
-						<input type="submit" name="" value="Search">
+						<input type="submit" name="" value="Filter">
 					</label>
 				</fieldset>
 			</form>
@@ -103,9 +100,10 @@
 			</form>
 		</div>
 
-		<!--dynamically generated list of places-->
 		<div>
 			<h2>Places</h2>
+			
+			<!--dynamically generated list of places-->
 			<div class="OverflowList">
 				<table>
 					<thead>
@@ -115,23 +113,69 @@
 					</thead>
 					<tbody id="HomePlacesList">
 						<!--rows below are those which will be dynamically populated in the future-->
-						<tr class="ListItem">
+						<tr>
 							<td>Port of Entry</td>
 						</tr>
-						<tr class="ListItem">
+						<tr>
 							<td>Homestead</td>
 						</tr>
-						<tr class="ListItem">
+						<tr>
 							<td>Family Ranch</td>
 						</tr>
 					</tbody>
 				</table>
 			</div>
+			
+			<!--place filtering form-->
+			<form>
+				<fieldset>
+					<legend>Filter Places</legend>
+					<label>
+						Location
+						<input type="text" name="">
+					</label>
+					<br>
+					<label>
+						Description
+						<input type="text" name="">
+					</label>
+					<br>
+					<label>
+						<input type="submit" name="" value="Filter">
+					</label>
+				</fieldset>
+			</form>
+			
+			<!--add place form-->
+			<form>
+				<fieldset>
+					<legend>Add Place</legend>
+					<br>
+					<label>
+						Location
+						<input type="text" name="">
+					</label>
+					<br>
+					<label>
+						Description
+						<input type="text" name="">
+					</label>
+					<br>
+					<label>
+						Photo
+						<input type="image" name="">
+					</label>
+					<br>
+					<input type="submit" name="" value="add">
+				</fieldset>
+			</form>
+			
 		</div>
 
-		<!--dynamically generated list of events-->
 		<div>
 			<h2>Events</h2>
+			
+			<!--dynamically generated list of events-->
 			<div class="OverflowList">
 				<table>
 					<thead>
@@ -141,15 +185,55 @@
 					</thead>
 					<tbody id="HomeEventsList">
 						<!--rows below are those which will be dynamically populated in the future-->
-						<tr class="ListItem">
+						<tr>
 							<td>Oregon Trail Journey</td>
 						</tr>
-						<tr class="ListItem">
+						<tr>
 							<td>Person_1 and Person_2 Wedding</td>
 						</tr>
 					</tbody>
 				</table>
 			</div>
+
+			<!--event filtering form-->
+			<form>
+				<fieldset>
+					<legend>Filter Events</legend>
+					<label>
+						Event Name
+						<input type="text" name="">
+					</label>
+					<br>
+					<label>
+						<input type="submit" name="" value="Filter">
+					</label>
+				</fieldset>
+			</form>
+			
+			<!--add event form-->
+			<form>
+				<fieldset>
+					<legend>Add Event</legend>
+					<br>
+					<label>
+						Event Name
+						<input type="text" name="">
+					</label>
+					<br>
+					<label>
+						Narrative
+						<input type="text" name="">
+					</label>
+					<br>
+					<label>
+						Photo
+						<input type="image" name="">
+					</label>
+					<br>
+					<input type="submit" name="" value="add">
+				</fieldset>
+			</form>
+			
 		</div>
 
 		<!--javascript files-->

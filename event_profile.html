@@ -12,7 +12,7 @@
 
 		<!--event's name and text-->
 		<div id="EventTextArea">
-			<h1 id="EventName">Demo Event</h1>
+			<h1 id="EventName" >Demo Event</h1> <button>Delete</button><button>Update</button>
 			<p>Here is some text to describe this event.</p>
 			<p>... And here is another paragraph of text to describe this event.</p>
 		</div>
@@ -37,6 +37,32 @@
 						</tr>
 						<tr>
 							<td>Demo</td> <td>Person_3</td> <td>1980-</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<!--dynamically generated list of Places associated with this Event-->
+		<div>
+			<h2>Associated Places</h2>
+			<div class="OverflowList">
+				<table>
+					<thead>
+						<tr>
+							<th>Place Name</th>
+						</tr>
+					</thead>
+					<tbody id="EventProfilePlacesList">
+						<!--rows below are those which will be dynamically populated in the future-->
+						<tr>
+							<td>Port of Entry</td>
+						</tr>
+						<tr>
+							<td>Homestead</td>
+						</tr>
+						<tr>
+							<td>Family Ranch</td>
 						</tr>
 					</tbody>
 				</table>
