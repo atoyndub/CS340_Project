@@ -1,51 +1,86 @@
+//*****************************************
+//***Person, Place, Event list functions***
+//*****************************************
+
 function loadList(listBodyID, targetPageName)
 {
 	//set event listeners and pointer style for each dynamically populated Person row
 	var currentRow = document.getElementById(listBodyID).firstElementChild;
 	while (currentRow)
 	{
-		currentRow.addEventListener("click", selectListItem.bind(currentRow, targetPageName));
-		currentRow.style.cursor = "default";
+		currentRow.addEventListener("mouseenter", highlightListItem.bind(currentRow));
+		currentRow.addEventListener("click", navigateToListItem.bind(currentRow, targetPageName));	
+		currentRow.style.cursor = "pointer";
 		currentRow = currentRow.nextElementSibling;
 	}
 }
 
-function selectListItem(targetPageName)
+function highlightListItem()
 {
-	//replace current row with a cloned element (to remove event handlers)
-	//then highlight it, change cursor style, and set the new on click event listener
+	//highlight the current list item
 	var currentRow = this
-	var rowClone = currentRow.cloneNode(true);
-	currentRow.parentNode.replaceChild(rowClone, currentRow);
-	rowClone.addEventListener("click", navigateToListItem.bind(rowClone, targetPageName));	
-	rowClone.style.backgroundColor = "yellow";
-	rowClone.style.cursor = "pointer";
-	var clickedRow = rowClone;
+	currentRow.style.backgroundColor = "yellow";
 
-	//perform similar actions to reset all other rows
-	currentRow = rowClone.nextElementSibling;
+	//remove any highlight from all other rows
+	currentRow = currentRow.nextElementSibling;
 	while (currentRow)
-	{
-		rowClone = currentRow.cloneNode(true);
-		currentRow.parentNode.replaceChild(rowClone, currentRow);
-		rowClone.addEventListener("click", selectListItem.bind(rowClone, targetPageName));		
-		rowClone.style.backgroundColor = "white";
-		rowClone.style.cursor = "default";
-		currentRow = rowClone.nextElementSibling;
+	{	
+		currentRow.style.backgroundColor = "white";
+		currentRow = currentRow.nextElementSibling;
 	}
-	currentRow = clickedRow.previousElementSibling;
+	currentRow = this.previousElementSibling;
 	while (currentRow)
 	{
-		rowClone = currentRow.cloneNode(true);
-		currentRow.parentNode.replaceChild(rowClone, currentRow);
-		rowClone.addEventListener("click", selectListItem.bind(rowClone, targetPageName));
-		rowClone.style.backgroundColor = "white";
-		rowClone.style.cursor = "default";
-		currentRow = rowClone.previousElementSibling;
+		currentRow.style.backgroundColor = "white";
+		currentRow = currentRow.previousElementSibling;
 	}
 }
 
-function navigateToListItem(targetPageName)
+function navigateToListItem(targetPageName, evnt)
+{	
+	if (evnt.target.tagName != "BUTTON") //only execute if the column being clicked is not a button column
+		document.location.href = targetPageName;
+}
+
+//*****************************
+//***photo gallery functions***
+//*****************************
+
+function loadGallery(galleryParentID)
 {
-	document.location.href = targetPageName;
+	//set event listeners and pointer style for each dynamically populated Person row
+	var currentImage = document.getElementById(galleryParentID).firstElementChild;
+	while (currentImage)
+	{
+		currentImage.addEventListener("mouseenter", highlightGalleryImage.bind(currentImage));
+		currentImage.addEventListener("click", navigateToGalleryImage.bind(currentImage));	
+		currentImage.style.cursor = "pointer";
+		currentImage = currentImage.nextElementSibling;
+	}	
+}
+
+function highlightGalleryImage()
+{
+	//highlight the current list item
+	var currentImage = this
+	currentImage.style.borderStyle = "solid";
+
+	//remove any highlight from all other rows
+	currentImage = currentImage.nextElementSibling;
+	while (currentImage)
+	{	
+		currentImage.style.borderStyle = "none";
+		currentImage = currentImage.nextElementSibling;
+	}
+	currentImage = this.previousElementSibling;
+	while (currentImage)
+	{
+		currentImage.style.borderStyle = "none";
+		currentImage = currentImage.previousElementSibling;
+	}
+}
+
+function navigateToGalleryImage()
+{
+	document.location.href = "photo_profile.html";
 }
