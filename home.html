@@ -10,37 +10,97 @@
 			<h1>Home Page</h1>
 		</div>
 		
-		<!--dynamically generated list of Persons-->
 		<div>
 			<h2>Persons</h2>
+			
+			<!--dynamically generated list of Persons-->
 			<div class="OverflowList">
 				<table>
-					
-						<thead>
-							<tr>
-								<th>First Name</th> <th>Last Name</th> <th>Dates</th>
-							</tr>
-						</thead>
-						<tbody id="HomePersonsList">
-							<!--rows below are those which will be dynamically populated in the future-->
-							<tr class="ListItem">
-								<td>Demo</td> <td>Person_1</td> <td>1900-1990</td>
-							</tr>
-							<tr class="ListItem">
-								<td>Demo</td> <td>Person_2</td> <td>1950-2015</td>
-							</tr>
-							<tr class="ListItem">
-								<td>Demo</td> <td>Person_3</td> <td>1980-</td>
-							</tr>
-							<tr class="ListItem">
-								<td>Demo</td> <td>Person_4</td> <td>1990-</td>
-							</tr>
-							<tr class="ListItem">
-								<td>Demo</td> <td>Person_5</td> <td>1995-</td>
-							</tr>
-						</tbody>
+					<thead>
+						<tr>
+							<th>First Name</th> <th>Last Name</th> <th>Dates</th>
+						</tr>
+					</thead>
+					<tbody id="HomePersonsList">
+						<!--rows below are those which will be dynamically populated in the future-->
+						<tr class="ListItem">
+							<td>Demo</td> <td>Person_1</td> <td>1900-1990</td>
+						</tr>
+						<tr class="ListItem">
+							<td>Demo</td> <td>Person_2</td> <td>1950-2015</td>
+						</tr>
+						<tr class="ListItem">
+							<td>Demo</td> <td>Person_3</td> <td>1980-</td>
+						</tr>
+						<tr class="ListItem">
+							<td>Demo</td> <td>Person_4</td> <td>1990-</td>
+						</tr>
+						<tr class="ListItem">
+							<td>Demo</td> <td>Person_5</td> <td>1995-</td>
+						</tr>
+					</tbody>
 				</table>
 			</div>
+			
+			<!--person filtering form-->
+			<form>
+				<fieldset>
+					<legend>Search Person</legend>
+					Search
+					<label>
+						First Name
+						<input type="text" name="">
+					</label>
+					<br>
+					<label>
+						Last Name
+						<input type="text" name="">
+					</label>
+					<br>
+					<label>
+						<input type="submit" name="" value="Search">
+					</label>
+				</fieldset>
+			</form>
+			
+			<!--add person form-->
+			<form>
+				<fieldset>
+					<legend>Add Person</legend>
+					<br>
+					<label>
+						First Name
+						<input type="text" name="">
+					</label>
+					<br>
+					<label>
+						Last Name
+						<input type="text" name="">
+					</label>
+					<br>
+					<label>
+						Date of Birth
+						<input type="Date" name="">
+					</label>
+					<br>
+					<label>
+						Date of Death
+						<input type="Date" name="">
+					</label>
+					<br>
+					<label>
+						Biography
+						<input type="text" name="">
+					</label>
+					<br>
+					<label>
+						Photo
+						<input type="image" name="">
+					</label>
+					<br>
+					<input type="submit" name="" value="add">
+				</fieldset>
+			</form>
 		</div>
 
 		<!--dynamically generated list of places-->
