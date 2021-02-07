@@ -7,8 +7,11 @@
 	</head>
 	<body>
 		<h1>Home Page</h1>
-		
-		<h2>Persons</h2>
+
+		<h2 class="InlineHeadingText">Persons</h2>
+		<h2 class="InlineHeadingText">
+			<a href="add_person.html">Add New</a>
+		</h2>
 		<div class="HomeContentDivision">
 			<!--dynamically generated list of Persons-->
 			<div class="HomeOverflowList">
@@ -38,7 +41,7 @@
 					</tbody>
 				</table>
 			</div>
-			
+
 			<!--person filtering form-->
 			<form class="HomeFilteringForm">
 				<fieldset>
@@ -58,47 +61,12 @@
 					</label>
 				</fieldset>
 			</form>
-			
-			<!--add person form-->
-			<form class="HomeCreationForm">
-				<fieldset>
-					<legend>Create New</legend>
-					<label>
-						First Name
-						<input type="text" name="">
-					</label>
-					<br>
-					<label>
-						Last Name
-						<input type="text" name="">
-					</label>
-					<br>
-					<label>
-						Date of Birth
-						<input type="Date" name="">
-					</label>
-					<br>
-					<label>
-						Date of Death
-						<input type="Date" name="">
-					</label>
-					<br>
-					<label>
-						Biography
-						<input type="text" name="">
-					</label>
-					<br>
-					<label>
-						Photo
-						<input type="file" name="" accept="image/jpeg">
-					</label>
-					<br>
-					<input type="submit" name="" value="add">
-				</fieldset>
-			</form>
 		</div>
 
-		<h2>Places</h2>
+		<h2 class="InlineHeadingText">Places</h2>
+		<h2 class="InlineHeadingText">
+			<a href="add_place.html">Add New</a>
+		</h2>
 		<div class="HomeContentDivision">
 
 			<!--dynamically generated list of places-->
@@ -123,7 +91,7 @@
 					</tbody>
 				</table>
 			</div>
-			
+
 			<!--place filtering form-->
 			<form class="HomeFilteringForm">
 				<fieldset>
@@ -143,33 +111,12 @@
 					</label>
 				</fieldset>
 			</form>
-			
-			<!--add place form-->
-			<form class="HomeCreationForm">
-				<fieldset>
-					<legend>Create New</legend>
-					<label>
-						Location
-						<input type="text" name="">
-					</label>
-					<br>
-					<label>
-						Description
-						<input type="text" name="">
-					</label>
-					<br>
-					<label>
-						Photo
-						<input type="file" name="" accept="image/jpeg">
-					</label>
-					<br>
-					<input type="submit" name="" value="add">
-				</fieldset>
-			</form>
-			
 		</div>
 
-		<h2>Events</h2>
+		<h2 class="InlineHeadingText">Events</h2>
+		<h2 class="InlineHeadingText">
+			<a href="add_event.html">Add New</a>
+		</h2>
 		<div class="HomeContentDivision">
 
 			<!--dynamically generated list of events-->
@@ -206,36 +153,11 @@
 					</label>
 				</fieldset>
 			</form>
-			
-			<!--add event form-->
-			<form class="HomeCreationForm">
-				<fieldset>
-					<legend>Create New</legend>
-					<label>
-						Event Name
-						<input type="text" name="">
-					</label>
-					<br>
-					<label>
-						Narrative
-						<input type="text" name="">
-					</label>
-					<br>
-					<label>
-						Photo
-						<input type="file" name="" accept="image/jpeg">
-					</label>
-					<br>
-					<input type="submit" name="" value="add">
-				</fieldset>
-			</form>
-			
 		</div>
 
 		<!--javascript files-->
 		<script src="list_functions.js"></script>
 		<script src="home_load.js"></script>
-		
+
 	</body>
 </html>
-
