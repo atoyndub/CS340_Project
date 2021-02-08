@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Add Event</title>
+		<title>Update Place</title>
 		<link rel="stylesheet" href="style.css" type="text/css">
 	</head>
 	<body>
@@ -10,20 +10,20 @@
 		<!--link to return to home page-->
 		<h2><a href="home.html">Home</a></h2>
 
-		<h2 class="InlineHeadingText">Create New Event</h2>
-		<h2 class="InlineHeadingText"><a href="home.html">Create</a></h2>
+		<h2 class="InlineHeadingText">Update Place</h2>
+		<h2 class="InlineHeadingText"><a href="place_profile.html">Save Changes</a></h2>
 
-		<!--event property fields-->
+		<!--property fields-->
 		<div>
 			<fieldset>
 				<label>
-					Event Name
-					<input type="text" name="">
+					Place Name
+					<input type="text" name="" value="Demo Place"></input>
 				</label>
 				<br>
-				<label>Narrative</label>
+				<label>Description</label>
 				<br>
-				<textarea name="" rows="8" cols="80"></textarea>
+				<textarea name="" rows="8" cols="80">Here is some text about this demo place. you can edit this text.</textarea>
 			</fieldset>
 		</div>
 
@@ -31,19 +31,30 @@
 		<div class="ContentDivision">
 			<div class="SideBySideDiv">
 				<h2 class="InlineHeadingText">Link to Person(s)</h2>
-				<h2 id="AddEvent_PersonToggle" class="InlineHeadingText"></h2>
+				<h2 id="UpdatePlace_PersonToggle" class="InlineHeadingText"></h2>
 				<div class="ExtensibleList">
 					<table>
-						<tbody id="AddEvent_PersonLinkList"></tbody>
+						<tbody id="UpdatePlace_PersonLinkList">
+							<!--rows below are those which will be dynamically populated in the future-->
+							<tr>
+								<td class="HiddenIDColumn">0</td> <td>Demo</td> <td>Person_1</td> <td>1900-1990</td>
+							</tr>
+							<tr>
+								<td class="HiddenIDColumn">1</td> <td>Demo</td> <td>Person_2</td> <td>1950-2015</td>
+							</tr>
+							<tr>
+								<td class="HiddenIDColumn">2</td> <td>Demo</td> <td>Person_3</td> <td>1980-</td>
+							</tr>
+						</tbody>
 					</table>
 				</div>
 			</div>
-			<div id="AddEvent_PersonSelector" class="SideBySideDiv" display="none">
+			<div id="UpdatePlace_PersonSelector" class="SideBySideDiv" display="none">
 				<h2>Select Person</h2>
 				<div>
 					<div class="HomeOverflowList">
 						<table>
-							<tbody id="AddEvent_PersonSelectorList">
+							<tbody id="UpdatePlace_PersonSelectorList">
 								<!--rows below are those which will be dynamically populated in the future-->
 								<tr>
 									<td class="HiddenIDColumn">0</td> <td>Demo</td> <td>Person_1</td> <td>1900-1990</td>
@@ -87,48 +98,45 @@
 			</div>
 		</div>
 
-		<!--section for adding links to places-->
+		<!--section for adding links to events-->
 		<div class="ContentDivision">
 			<div class="SideBySideDiv">
-				<h2 class="InlineHeadingText">Link to Place(s)</h2>
-				<h2 id="AddEvent_PlaceToggle" class="InlineHeadingText"></h2>
+				<h2 class="InlineHeadingText">Link to Event(s)</h2>
+				<h2 id="UpdatePlace_EventToggle" class="InlineHeadingText"></h2>
 				<div class="ExtensibleList">
 					<table>
-						<tbody id="AddEvent_PlaceLinkList"></tbody>
+						<tbody id="UpdatePlace_EventLinkList">
+							<!--rows below are those which will be dynamically populated in the future-->
+							<tr>
+								<td class="HiddenIDColumn">1</td> <td>Person_1 and Person_2 Wedding</td>
+							</tr>
+						</tbody>
 					</table>
 				</div>
 			</div>
-			<div id="AddEvent_PlaceSelector" class="SideBySideDiv" display="none">
-				<h2>Select Place</h2>
+			<div id="UpdatePlace_EventSelector" class="SideBySideDiv" display="none">
+				<h2>Select Event</h2>
 				<div>
 					<div class="HomeOverflowList">
 						<table>
-							<tbody id="AddEvent_PlaceSelectorList">
+							<tbody id="UpdatePlace_EventSelectorList">
 								<!--rows below are those which will be dynamically populated in the future-->
 								<tr>
-									<td class="HiddenIDColumn">0</td> <td>Port of Entry</td>
+									<td class="HiddenIDColumn">0</td> <td>Oregon Trail Journey</td>
 								</tr>
 								<tr>
-									<td class="HiddenIDColumn">1</td> <td>Homestead</td>
-								</tr>
-								<tr>
-									<td class="HiddenIDColumn">2</td> <td>Family Ranch</td>
+									<td class="HiddenIDColumn">1</td> <td>Person_1 and Person_2 Wedding</td>
 								</tr>
 							</tbody>
 						</table>
 					</div>
 
-					<!--place filtering form-->
+					<!--event filtering form-->
 					<form class="HomeFilteringForm">
 						<fieldset>
 							<legend>Filter By</legend>
 							<label>
-								Location
-								<input type="text" name="">
-							</label>
-							<br>
-							<label>
-								Description
+								Event Name
 								<input type="text" name="">
 							</label>
 							<br>
@@ -145,19 +153,23 @@
 		<div class="ContentDivision">
 			<div class="SideBySideDiv">
 				<h2 class="InlineHeadingText">Link to Photo(s)</h2>
-				<h2 id="AddEvent_PhotoToggle" class="InlineHeadingText"></h2>
+				<h2 id="UpdatePlace_PhotoToggle" class="InlineHeadingText"></h2>
 				<div class="ExtensibleList">
 					<table>
-						<tbody id="AddEvent_PhotoLinkList"></tbody>
+						<tbody id="UpdatePlace_PhotoLinkList">
+							<tr>
+								<td class="HiddenIDColumn">0</td> <td></td> <td>demo image 1</td>
+							</tr>
+						</tbody>
 					</table>
 				</div>
 			</div>
-			<div id="AddEvent_PhotoSelector" class="SideBySideDiv" display="none">
+			<div id="UpdatePlace_PhotoSelector" class="SideBySideDiv" display="none">
 				<h2>Select Photo</h2>
 				<div>
 					<div class="HomeOverflowList">
 						<table>
-							<tbody id="AddEvent_PhotoSelectorList">
+							<tbody id="UpdatePlace_PhotoSelectorList">
 								<!--rows below are those which will be dynamically populated in the future-->
 								<tr>
 									<td class="HiddenIDColumn">0</td> <td><img src="demo_image_1.jpg" height="20px"></td> <td>demo image 1</td>
@@ -192,7 +204,7 @@
 
 		<!--javascript files-->
 		<script src="list_functions.js"></script>
-		<script src="add_event_load.js"></script>
+		<script src="update_place_load.js"></script>
 
 	</body>
 </html>

@@ -6,22 +6,23 @@
 		<link rel="stylesheet" href="style.css" type="text/css">
 	</head>
 	<body>
-		
+
 		<!--link to return to home page-->
 		<h2><a href="home.html">Home</a></h2>
 
 		<div>
 			<h1 class="InlineHeadingText">Demo Place</h1>
-			<button class="InlineHeadingButton">Delete</button>
-			<button class="InlineHeadingButton">Update</button>
+			<h2 class="InlineHeadingText">
+				<a href="update_place.html">Update</a>
+			</h2>
+			<h2 class="InlineHeadingText"><a href="home.html">Delete</a></h2>
 			<p>Here is some text to describe this place.</p>
 			<p>... And here is another paragraph of text to describe this place.</p>
 		</div>
-		
+
 		<!--dynamically generated list of Persons associated with this Place-->
         <div>
-            <h2 class="InlineHeadingText">Associated Persons</h2>
-			<button class="InlineHeadingButton">Add Link</button>
+            <h2>Associated Persons</h2>
             <div class="OverflowList">
                 <table>
                     <tbody id="PlaceProfilePersonsList">
@@ -40,9 +41,26 @@
             </div>
         </div>
 
+		<!--dynamically generated list of Events associated with this Place-->
 		<div>
-			<h2 class="InlineHeadingText">Images</h2>
-			<button class="InlineHeadingButton">Add Link</button>
+			<h2>Associated Events</h2>
+			<div class="OverflowList">
+				<table>
+					<tbody id= "PlaceProfileEventsList">
+						<!--rows below are those which will be dynamically populated in the future-->
+						<tr>
+							<td>Oregon Trail Journey</td>
+						</tr>
+						<tr>
+							<td>Person_1 and Person_2 Wedding</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<div>
+			<h2>Images</h2>
 			<p id="PlaceProfileImagesList">
 				<img src="demo_image_1.jpg" height="200px">
 				<img src="demo_image_2.jpg" height="200px">

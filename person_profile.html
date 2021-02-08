@@ -12,16 +12,35 @@
 
 		<div>
 			<h1 class="InlineHeadingText">Demo Person</h1>
-			<button class="InlineHeadingButton">Delete</button>
-			<button class="InlineHeadingButton">Update</button>
+			<h2 class="InlineHeadingText">
+				<a href="update_person.html">Update</a>
+			</h2>
+			<h2 class="InlineHeadingText"><a href="home.html">Delete</a></h2>
+
 			<img id="PersonProfileImage" src="demo_profile_image.jpg" height="300px"></img>
 			<p>Here is some text to describe this person.</p>
 			<p>... And here is another paragraph of text to describe this person.</p>
 		</div>
 
 		<div>
-			<h2 class="InlineHeadingText">Spouses</h2>
-			<button class="InlineHeadingButton">Add Link</button>
+			<h2>Parents</h2>
+			<div class="OverflowList">
+				<table>
+					<tbody id="PersonProfileParentsList">
+						<!--rows below are those which will be dynamically populated in the future-->
+						<tr>
+							<td>Demo</td> <td>Person_1</td> <td>1900-1990</td>
+						</tr>
+						<tr>
+							<td>Demo</td> <td>Person_2</td> <td>1950-2015</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<div>
+			<h2>Spouses</h2>
 			<div class="OverflowList">
 				<table>
 					<tbody id="PersonProfileSpousesList">
@@ -35,8 +54,7 @@
 		</div>
 
 		<div>
-			<h2 class="InlineHeadingText">Children</h2>
-			<button class="InlineHeadingButton">Add Link</button>
+			<h2>Children</h2>
 			<div class="OverflowList">
 				<table>
 					<tbody id="PersonProfileChildrenList">
@@ -55,28 +73,9 @@
 			</div>
 		</div>
 
-		<div>
-			<h2 class="InlineHeadingText">Parents</h2>
-			<button class="InlineHeadingButton">Add Link</button>
-			<div class="OverflowList">
-				<table>
-					<tbody id="PersonProfileParentsList">
-						<!--rows below are those which will be dynamically populated in the future-->
-						<tr>
-							<td>Demo</td> <td>Person_1</td> <td>1900-1990</td>
-						</tr>
-						<tr>
-							<td>Demo</td> <td>Person_2</td> <td>1950-2015</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</div>
-
 		<!--dynamically generated list of Places associated with this Person-->
 		<div>
-			<h2 class="InlineHeadingText">Associated Places</h2>
-			<button class="InlineHeadingButton">Add Link</button>
+			<h2>Associated Places</h2>
 			<div class="OverflowList">
 				<table>
 					<tbody id= "PersonProfilePlacesList">
@@ -97,10 +96,27 @@
 			</div>
 		</div>
 
+		<!--dynamically generated list of Events associated with this Person-->
+		<div>
+			<h2>Associated Events</h2>
+			<div class="OverflowList">
+				<table>
+					<tbody id= "PersonProfileEventsList">
+						<!--rows below are those which will be dynamically populated in the future-->
+						<tr>
+							<td>Oregon Trail Journey</td>
+						</tr>
+						<tr>
+							<td>Person_1 and Person_2 Wedding</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
 		<!--gallery images-->
 		<div>
-			<h2 class="InlineHeadingText">Images</h2>
-			<button class="InlineHeadingButton">Add Link</button>
+			<h2>Images</h2>
 			<p id="PersonProfileGalleryImagesList">
 				<img src="demo_image_1.jpg" height="200px">
 				<img src="demo_image_2.jpg" height="200px">

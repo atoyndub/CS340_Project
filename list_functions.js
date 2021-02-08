@@ -152,6 +152,23 @@ function removeRowFromSelectionList()
 	this.remove();
 }
 
+function addRemoveOptionToSelectionListElements(listBodyID)
+{
+	var listBody = document.getElementById(listBodyID);
+	var currentRow = listBody.firstElementChild;
+	while (currentRow)
+	{
+		var newColumn = document.createElement("td");
+		newColumn = document.createElement("td");
+		newColumn.textContent = "remove";
+		newColumn.style.color = "purple";
+		newColumn.style.cursor = "pointer";
+		newColumn.addEventListener("click", removeRowFromSelectionList.bind(currentRow));
+		currentRow.appendChild(newColumn);
+		currentRow = currentRow.nextElementSibling;
+	}
+}
+
 //*****************************
 //***photo gallery functions***
 //*****************************
