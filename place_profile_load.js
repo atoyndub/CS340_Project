@@ -1,4 +1,4 @@
 //execution code
-loadList("PlaceProfilePersonsList", "person_profile.html");
-loadList("PlaceProfileEventsList", "event_profile.html");
+loadList("PlaceProfilePersonsList", goToPersonProfile);
+loadList("PlaceProfileEventsList", goToEventProfile);
 loadGallery("PlaceProfileImagesList");

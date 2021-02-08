@@ -2,44 +2,48 @@
 //***Person, Place, Event list functions***
 //*****************************************
 
-function loadList(listBodyID, targetPageName)
+function highlightListItem()
+{
+	this.style.backgroundColor = "yellow";
+}
+
+function unhighlightListItem()
+{
+	this.style.backgroundColor = "white";
+}
+
+//list item on click functions
+
+function goToPersonProfile(evnt)
+{
+	if (evnt.target.tagName != "BUTTON") //only execute if the column being clicked is not a button column
+		document.location.href = "person_profile.html";
+}
+
+function goToPlaceProfile(evnt)
+{
+	if (evnt.target.tagName != "BUTTON") //only execute if the column being clicked is not a button column
+		document.location.href = "place_profile.html";
+}
+
+function goToEventProfile(evnt)
+{
+	if (evnt.target.tagName != "BUTTON") //only execute if the column being clicked is not a button column
+		document.location.href = "event_profile.html";
+}
+
+function loadList(listBodyID, onClickFunction)
 {
 	//set event listeners and pointer style for each dynamically populated Person row
 	var currentRow = document.getElementById(listBodyID).firstElementChild;
 	while (currentRow)
 	{
 		currentRow.addEventListener("mouseenter", highlightListItem.bind(currentRow));
-		currentRow.addEventListener("click", navigateToListItem.bind(currentRow, targetPageName));	
+		currentRow.addEventListener("mouseleave", unhighlightListItem.bind(currentRow));
+		currentRow.addEventListener("click", onClickFunction.bind(currentRow));
 		currentRow.style.cursor = "pointer";
 		currentRow = currentRow.nextElementSibling;
 	}
-}
-
-function highlightListItem()
-{
-	//highlight the current list item
-	var currentRow = this
-	currentRow.style.backgroundColor = "yellow";
-
-	//remove any highlight from all other rows
-	currentRow = currentRow.nextElementSibling;
-	while (currentRow)
-	{	
-		currentRow.style.backgroundColor = "white";
-		currentRow = currentRow.nextElementSibling;
-	}
-	currentRow = this.previousElementSibling;
-	while (currentRow)
-	{
-		currentRow.style.backgroundColor = "white";
-		currentRow = currentRow.previousElementSibling;
-	}
-}
-
-function navigateToListItem(targetPageName, evnt)
-{	
-	if (evnt.target.tagName != "BUTTON") //only execute if the column being clicked is not a button column
-		document.location.href = targetPageName;
 }
 
 //*****************************
@@ -53,10 +57,10 @@ function loadGallery(galleryParentID)
 	while (currentImage)
 	{
 		currentImage.addEventListener("mouseenter", highlightGalleryImage.bind(currentImage));
-		currentImage.addEventListener("click", navigateToGalleryImage.bind(currentImage));	
+		currentImage.addEventListener("click", navigateToGalleryImage.bind(currentImage));
 		currentImage.style.cursor = "pointer";
 		currentImage = currentImage.nextElementSibling;
-	}	
+	}
 }
 
 function highlightGalleryImage()
@@ -68,7 +72,7 @@ function highlightGalleryImage()
 	//remove any highlight from all other rows
 	currentImage = currentImage.nextElementSibling;
 	while (currentImage)
-	{	
+	{
 		currentImage.style.borderStyle = "none";
 		currentImage = currentImage.nextElementSibling;
 	}

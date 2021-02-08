@@ -1,16 +1,19 @@
+loadList("SelectPersonList", changePersonSelectorVisibility);
+
 var toggle = document.getElementById("PersonSelectorToggle");
 toggle.textContent = "Select";
 toggle.style.color = "purple";
-toggle.addEventListener("click", changeSectionVisibility.bind(section, "PersonSelectorToggle", "PersonSelector"));
 toggle.style.cursor = "pointer";
 
 var section = document.getElementById("PersonSelector");
 section.style.display = "none";
 
-function changeSectionVisibility(toggleID, sectionID)
+toggle.addEventListener("click", changePersonSelectorVisibility);
+
+function changePersonSelectorVisibility()
 {
-	var t = document.getElementById(toggleID);
-	var s = document.getElementById(sectionID);
+	var t = document.getElementById("PersonSelectorToggle");
+	var s = document.getElementById("PersonSelector");
 	if (t.textContent == "Select")
 	{
 		t.textContent = "Cancel";
@@ -21,5 +24,4 @@ function changeSectionVisibility(toggleID, sectionID)
 		t.textContent = "Select";
 		s.style.display = "none";
 	}
-
 }
