@@ -10,67 +10,55 @@
 		<!--link to return to home page-->
 		<h2><a href="home.html">Home</a></h2>
 
-		<h2>Create New Event</h2>
+		<h2 class="InlineHeadingText">Create New Event</h2>
+		<button class="InlineHeadingButton">Create</button>
+
+		<!--event property fields-->
 		<div>
-			<!--add event form-->
-			<form class="HomeCreationForm">
-				<fieldset>
-					<label>
-						Event Name
-						<input type="text" name="">
-					</label>
-					<br>
-					<label>
-						Narrative
-						<input type="text" name="">
-					</label>
-					<br>
-					<label>
-						Photo
-						<input type="file" name="" accept="image/jpeg">
-					</label>
-					<br>
-					<input type="submit" name="" value="add">
-				</fieldset>
-			</form>
+			<fieldset>
+				<label>
+					Event Name
+					<input type="text" name="">
+				</label>
+				<br>
+				<label>Narrative</label>
+				<br>
+				<textarea name="" rows="8" cols="80"></textarea>
+			</fieldset>
 		</div>
 
-		<!--dynamically generated list of Persons associated with this Event-->
-		<div>
-			<div class="LeftRecordList">
+		<!--section for adding links to persons-->
+		<div class="ContentDivision">
+			<div class="SideBySideDiv">
 				<h2 class="InlineHeadingText">Link to Person(s)</h2>
 				<h2 id="PersonSelectorToggle" class="InlineHeadingText"></h2>
 				<div class="ExtensibleList">
 					<table>
-						<tbody id="EventProfilePersonsList">
-							<!--rows below are those which will be dynamically populated in the future-->
-						</tbody>
+						<tbody id="AddEventPersonsList"></tbody>
 					</table>
 				</div>
 			</div>
-			<div id="PersonSelector" class="RightSelectorList" display="none">
+			<div id="PersonSelector" class="SideBySideDiv" display="none">
 				<h2>Select Person</h2>
-
-				<div class="HomeContentDivision">
-					<!--dynamically generated list of Persons-->
+				<div>
 					<div class="HomeOverflowList">
 						<table>
 							<tbody id="SelectPersonList">
 								<!--rows below are those which will be dynamically populated in the future-->
 								<tr>
-									<td>Demo</td> <td>Person_1</td> <td>1900-1990</td>
+									<td class="HiddenIDColumn">0</td> <td>Demo</td> <td>Person_1</td> <td>1900-1990</td>
 								</tr>
 								<tr>
-									<td>Demo</td> <td>Person_2</td> <td>1950-2015</td>
+									<td class="HiddenIDColumn">1</td> <td>Demo</td> <td>Person_2</td> <td>1950-2015</td>
 								</tr>
 								<tr>
-									<td>Demo</td> <td>Person_3</td> <td>1980-</td>
+									<td class="HiddenIDColumn">2</td> <td>Demo</td> <td>Person_3</td> <td>1980-</td>
 								</tr>
 								<tr>
-									<td>Demo</td> <td>Person_4</td> <td>1990-</td>
+									<td class="HiddenIDColumn">3</td> <td>Demo</td> <td>Person_4</td> <td>1990-</td>
 								</tr>
 								<tr>
-									<td>Demo</td> <td>Person_5</td> <td>1995-</td>
+									<td class="HiddenIDColumn">4</td> <td>Demo</td> <td>Person_5</td> <td>1995-</td>
 								</tr>
 							</tbody>
 						</table>
@@ -96,7 +84,109 @@
 						</fieldset>
 					</form>
 				</div>
+			</div>
+		</div>
 
+		<!--section for adding links to places-->
+		<div class="ContentDivision">
+			<div class="SideBySideDiv">
+				<h2 class="InlineHeadingText">Link to Place(s)</h2>
+				<h2 id="PlaceSelectorToggle" class="InlineHeadingText"></h2>
+				<div class="ExtensibleList">
+					<table>
+						<tbody id="AddEventPlacesList"></tbody>
+					</table>
+				</div>
+			</div>
+			<div id="PlaceSelector" class="SideBySideDiv" display="none">
+				<h2>Select Place</h2>
+				<div>
+					<div class="HomeOverflowList">
+						<table>
+							<tbody id="SelectPlacesList">
+								<!--rows below are those which will be dynamically populated in the future-->
+								<tr>
+									<td class="HiddenIDColumn">0</td> <td>Port of Entry</td>
+								</tr>
+								<tr>
+									<td class="HiddenIDColumn">1</td> <td>Homestead</td>
+								</tr>
+								<tr>
+									<td class="HiddenIDColumn">2</td> <td>Family Ranch</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<!--place filtering form-->
+					<form class="HomeFilteringForm">
+						<fieldset>
+							<legend>Filter By</legend>
+							<label>
+								Location
+								<input type="text" name="">
+							</label>
+							<br>
+							<label>
+								Description
+								<input type="text" name="">
+							</label>
+							<br>
+							<label>
+								<input type="submit" name="" value="Filter">
+							</label>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<!--section for adding links to photos-->
+		<div class="ContentDivision">
+			<div class="SideBySideDiv">
+				<h2 class="InlineHeadingText">Link to Photo(s)</h2>
+				<h2 id="PhotoSelectorToggle" class="InlineHeadingText"></h2>
+				<div class="ExtensibleList">
+					<table>
+						<tbody id="AddEventPhotosList"></tbody>
+					</table>
+				</div>
+			</div>
+			<div id="PhotoSelector" class="SideBySideDiv" display="none">
+				<h2>Select Photo</h2>
+				<div>
+					<div class="HomeOverflowList">
+						<table>
+							<tbody id="SelectPhotosList">
+								<!--rows below are those which will be dynamically populated in the future-->
+								<tr>
+									<td class="HiddenIDColumn">0</td> <td><img src="demo_image_1.jpg" height="20px"></td> <td>demo image 1</td>
+								</tr>
+								<tr>
+									<td class="HiddenIDColumn">1</td> <td><img src="demo_image_2.jpg" height="20px"></td> <td>demo image 2</td>
+								</tr>
+								<tr>
+									<td class="HiddenIDColumn">2</td> <td><img src="demo_image_3.jpg" height="20px"></td> <td>demo image 3</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<!--photo filtering form-->
+					<form class="HomeFilteringForm">
+						<fieldset>
+							<legend>Filter By</legend>
+							<label>
+								photo caption
+								<input type="text" name="">
+							</label>
+							<br>
+							<label>
+								<input type="submit" name="" value="Filter">
+							</label>
+						</fieldset>
+					</form>
+				</div>
 			</div>
 		</div>
 

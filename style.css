@@ -63,15 +63,28 @@
 	border-width: 2px;
 }
 
-
-
-.LeftRecordList
+.SideBySideDiv
 {
 	display: inline-block;
 	float: left;
 }
-.RightSelectorList
+
+.HiddenIDColumn
 {
-	display: inline-block;
+	visibility: collapse;
+}
+
+.ContentDivision
+{
+	padding-top: 10px;
+	padding-bottom: 10px;
+
 	float: left;
+	width: 100%;
+}
+
+.LargeInputText
+{
+	height: 300px;
+	width: 80%;
 }

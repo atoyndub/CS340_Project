@@ -6,7 +6,7 @@
 		<link rel="stylesheet" href="style.css" type="text/css">
 	</head>
 	<body>
-		
+
 		<!--link to return to home page-->
 		<h2><a href="home.html">Home</a></h2>
 
@@ -18,28 +18,23 @@
 			<p>Here is some text to describe this event.</p>
 			<p>... And here is another paragraph of text to describe this event.</p>
 		</div>
-	
+
 		<!--dynamically generated list of Persons associated with this Event-->
 		<div>
 			<h2 class="InlineHeadingText">Associated Persons</h2>
 			<button class="InlineHeadingButton">Add Link</button>
 			<div class="OverflowList">
 				<table>
-					<thead>
-						<tr>
-							<th>First Name</th> <th>Last Name</th> <th>Dates</th>
-						</tr>
-					</thead>
 					<tbody id="EventProfilePersonsList">
 						<!--rows below are those which will be dynamically populated in the future-->
 						<tr>
-							<td>Demo</td> <td>Person_1</td> <td>1900-1990</td> <td><button>Unlink</button></td>
+							<td>Demo</td> <td>Person_1</td> <td>1900-1990</td>
 						</tr>
 						<tr>
-							<td>Demo</td> <td>Person_2</td> <td>1950-2015</td> <td><button>Unlink</button></td>
+							<td>Demo</td> <td>Person_2</td> <td>1950-2015</td>
 						</tr>
 						<tr>
-							<td>Demo</td> <td>Person_3</td> <td>1980-</td> <td><button>Unlink</button></td>
+							<td>Demo</td> <td>Person_3</td> <td>1980-</td>
 						</tr>
 					</tbody>
 				</table>
@@ -52,21 +47,16 @@
 			<button class="InlineHeadingButton">Add Link</button>
 			<div class="OverflowList">
 				<table>
-					<thead>
-						<tr>
-							<th>Place Name</th>
-						</tr>
-					</thead>
 					<tbody id="EventProfilePlacesList">
 						<!--rows below are those which will be dynamically populated in the future-->
 						<tr>
-							<td>Port of Entry</td> <td><button>Unlink</button></td>
+							<td>Port of Entry</td>
 						</tr>
 						<tr>
-							<td>Homestead</td> <td><button>Unlink</button></td>
+							<td>Homestead</td>
 						</tr>
 						<tr>
-							<td>Family Ranch</td> <td><button>Unlink</button></td>
+							<td>Family Ranch</td>
 						</tr>
 					</tbody>
 				</table>
@@ -87,6 +77,6 @@
 		<!--javascript files-->
 		<script src="list_functions.js"></script>
 		<script src="event_profile_load.js"></script>
-		
+
 	</body>
 </html>

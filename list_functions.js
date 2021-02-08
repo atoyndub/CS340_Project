@@ -34,7 +34,7 @@ function goToEventProfile(evnt)
 
 function loadList(listBodyID, onClickFunction)
 {
-	//set event listeners and pointer style for each dynamically populated Person row
+	//set event listeners and pointer style for each dynamically populated row
 	var currentRow = document.getElementById(listBodyID).firstElementChild;
 	while (currentRow)
 	{
@@ -44,6 +44,112 @@ function loadList(listBodyID, onClickFunction)
 		currentRow.style.cursor = "pointer";
 		currentRow = currentRow.nextElementSibling;
 	}
+}
+
+//************************************
+//***toggle/selector list functions***
+//************************************
+
+function loadSelectorList(toggleID, selectorListID, selectorListBodyID, destinationListBodyID)
+{
+	//hide selector list
+	var selectorList = document.getElementById(selectorListID);
+	selectorList.style.display = "none";
+
+	//set up initial state of toggle
+	var toggle = document.getElementById(toggleID);
+	toggle.textContent = "Select";
+	toggle.style.color = "purple";
+	toggle.style.cursor = "pointer";
+	toggle.addEventListener("click", toggleSelectorVisibility.bind(toggle, selectorList));
+
+	//set event listeners and pointer style for each dynamically populated row
+	var destinationListBody = document.getElementById(destinationListBodyID);
+	var selectorListBody = document.getElementById(selectorListBodyID);
+	var currentRow = selectorListBody.firstElementChild;
+	while (currentRow)
+	{
+		currentRow.addEventListener("mouseenter", highlightListItem.bind(currentRow));
+		currentRow.addEventListener("mouseleave", unhighlightListItem.bind(currentRow));
+		currentRow.addEventListener("click", addSelectedRowToList.bind(currentRow, destinationListBody));
+		currentRow.style.cursor = "pointer";
+		currentRow = currentRow.nextElementSibling;
+	}
+}
+
+//assumes this is the toggle element
+function toggleSelectorVisibility(selectorList)
+{
+	if (this.textContent == "Select")
+	{
+		this.textContent = "Hide";
+		selectorList.style.display = "inline-block";
+	}
+	else
+	{
+		this.textContent = "Select";
+		selectorList.style.display = "none";
+	}
+}
+
+//assumes this is a row in the selector list
+function addSelectedRowToList(destinationTableBody)
+{
+	//get the hidden ID of the selected row
+	var currentColumn = this.firstElementChild;
+	var rowID = currentColumn.textContent;
+
+	//copy remaining columns from the selected row
+	var columnsList = [];
+	currentColumn = currentColumn.nextElementSibling;
+	do
+	{
+		columnsList.push(currentColumn.textContent);
+		currentColumn = currentColumn.nextElementSibling;
+	} while (currentColumn);
+
+	//check whether a row w/ same ID already exists in the destination table
+	var currentRow = destinationTableBody.firstElementChild;
+	var matchFound = false;
+	while (currentRow)
+	{
+		if (currentRow.firstElementChild.textContent == rowID)
+		{
+			matchFound = true;
+			break;
+		}
+		currentRow = currentRow.nextElementSibling;
+	}
+
+	//paste copied columns into other table if no match was found
+	if (!matchFound)
+	{
+		var newRow = document.createElement("tr");
+		var newColumn = document.createElement("td");
+		newColumn.textContent = rowID;
+		newColumn.style.visibility = "collapse";
+		newRow.appendChild(newColumn);
+		for (var i = 0; i < columnsList.length; i++)
+		{
+			newColumn = document.createElement("td");
+			newColumn.textContent = columnsList[i]
+			newRow.appendChild(newColumn);
+		}
+		newColumn = document.createElement("td");
+		newColumn.textContent = "remove";
+		newColumn.style.color = "purple";
+		newColumn.style.cursor = "pointer";
+		newColumn.addEventListener("click", removeRowFromSelectionList.bind(newRow));
+
+		newRow.appendChild(newColumn);
+		destinationTableBody.appendChild(newRow);
+	}
+}
+
+//assumes this is the row to be removed
+function removeRowFromSelectionList()
+{
+	this.remove();
 }
 
 //*****************************
