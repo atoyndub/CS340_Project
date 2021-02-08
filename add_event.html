@@ -10,12 +10,11 @@
 		<!--link to return to home page-->
 		<h2><a href="home.html">Home</a></h2>
 
-		<h2>Add Event</h2>
+		<h2>Create New Event</h2>
 		<div>
 			<!--add event form-->
 			<form class="HomeCreationForm">
 				<fieldset>
-					<legend>Create New</legend>
 					<label>
 						Event Name
 						<input type="text" name="">
@@ -36,7 +35,74 @@
 			</form>
 		</div>
 
+		<!--dynamically generated list of Persons associated with this Event-->
+		<div>
+			<div class="LeftRecordList">
+				<h2 class="InlineHeadingText">Link to Person(s)</h2>
+				<h2 id="PersonSelectorToggle" class="InlineHeadingText"></h2>
+				<div class="ExtensibleList">
+					<table>
+						<tbody id="EventProfilePersonsList">
+							<!--rows below are those which will be dynamically populated in the future-->
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div id="PersonSelector" class="RightSelectorList" display="none">
+				<h2>Select Person</h2>
+
+				<div class="HomeContentDivision">
+					<!--dynamically generated list of Persons-->
+					<div class="HomeOverflowList">
+						<table>
+							<tbody id="HomePersonsList">
+								<!--rows below are those which will be dynamically populated in the future-->
+								<tr>
+									<td>Demo</td> <td>Person_1</td> <td>1900-1990</td>
+								</tr>
+								<tr>
+									<td>Demo</td> <td>Person_2</td> <td>1950-2015</td>
+								</tr>
+								<tr>
+									<td>Demo</td> <td>Person_3</td> <td>1980-</td>
+								</tr>
+								<tr>
+									<td>Demo</td> <td>Person_4</td> <td>1990-</td>
+								</tr>
+								<tr>
+									<td>Demo</td> <td>Person_5</td> <td>1995-</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<!--person filtering form-->
+					<form class="HomeFilteringForm">
+						<fieldset>
+							<legend>Filter By</legend>
+							<label>
+								First Name
+								<input type="text" name="">
+							</label>
+							<br>
+							<label>
+								Last Name
+								<input type="text" name="">
+							</label>
+							<br>
+							<label>
+								<input type="submit" name="" value="Filter">
+							</label>
+						</fieldset>
+					</form>
+				</div>
+
+			</div>
+		</div>
+
 		<!--javascript files-->
+		<script src="list_functions.js"></script>
+		<script src="add_event_load.js"></script>
 
 	</body>
 </html>
