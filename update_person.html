@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Update Person</title>
+		<link rel="stylesheet" href="style.css" type="text/css">
+	</head>
+	<body>
+
+		<!--link to return to home page-->
+		<h2><a href="home.html">Home</a></h2>
+
+		<h2 class="InlineHeadingText">Update Person</h2>
+		<h2 class="InlineHeadingText"><a href="person_profile.html">Save Changes</a></h2>
+
+		<!--property fields-->
+		<div>
+			<fieldset>
+				<label>
+					First Name
+					<input type="text" name="" value="Demo">
+				</label>
+				<br>
+				<label>
+					Last Name
+					<input type="text" name="" value="Person">
+				</label>
+				<br>
+				<label>
+					Date of Birth
+					<input type="Date" name="" value="01/01/2001">
+				</label>
+				<br>
+				<label>
+					Date of Death
+					<input type="Date" name="" value="">
+				</label>
+				<br>
+				<label>Biography</label>
+				<br>
+				<textarea name="" rows="8" cols="80">Here is some text about this demo person. you can edit this text.</textarea>
+			</fieldset>
+		</div>
+
+		<!--section for adding links to parents-->
+		<div class="ContentDivision">
+			<div class="SideBySideDiv">
+				<h2 class="InlineHeadingText">Link to Parents</h2>
+				<h2 id="UpdatePerson_ParentToggle" class="InlineHeadingText"></h2>
+				<div class="ExtensibleList">
+					<table>
+						<tbody id="UpdatePerson_ParentLinkList">
+							<!--rows below are those which will be dynamically populated in the future-->
+							<tr>
+								<td class="HiddenIDColumn">1</td> <td>Demo</td> <td>Person_2</td> <td>1950-2015</td>
+							</tr>
+							<tr>
+								<td class="HiddenIDColumn">2</td> <td>Demo</td> <td>Person_3</td> <td>1980-</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div id="UpdatePerson_ParentSelector" class="SideBySideDiv" display="none">
+				<h2>Select Person</h2>
+				<div>
+					<div class="HomeOverflowList">
+						<table>
+							<tbody id="UpdatePerson_ParentSelectorList">
+								<!--rows below are those which will be dynamically populated in the future-->
+								<tr>
+									<td class="HiddenIDColumn">0</td> <td>Demo</td> <td>Person_1</td> <td>1900-1990</td>
+								</tr>
+								<tr>
+									<td class="HiddenIDColumn">1</td> <td>Demo</td> <td>Person_2</td> <td>1950-2015</td>
+								</tr>
+								<tr>
+									<td class="HiddenIDColumn">2</td> <td>Demo</td> <td>Person_3</td> <td>1980-</td>
+								</tr>
+								<tr>
+									<td class="HiddenIDColumn">3</td> <td>Demo</td> <td>Person_4</td> <td>1990-</td>
+								</tr>
+								<tr>
+									<td class="HiddenIDColumn">4</td> <td>Demo</td> <td>Person_5</td> <td>1995-</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<!--person filtering form-->
+					<form class="HomeFilteringForm">
+						<fieldset>
+							<legend>Filter By</legend>
+							<label>
+								First Name
+								<input type="text" name="">
+							</label>
+							<br>
+							<label>
+								Last Name
+								<input type="text" name="">
+							</label>
+							<br>
+							<label>
+								<input type="submit" name="" value="Filter">
+							</label>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<!--section for adding links to spouses-->
+		<div class="ContentDivision">
+			<div class="SideBySideDiv">
+				<h2 class="InlineHeadingText">Link to Spouses</h2>
+				<h2 id="UpdatePerson_SpouseToggle" class="InlineHeadingText"></h2>
+				<div class="ExtensibleList">
+					<table>
+						<tbody id="UpdatePerson_SpouseLinkList">
+							<!--rows below are those which will be dynamically populated in the future-->
+							<tr>
+								<td class="HiddenIDColumn">4</td> <td>Demo</td> <td>Person_5</td> <td>1995-</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div id="UpdatePerson_SpouseSelector" class="SideBySideDiv" display="none">
+				<h2>Select Person</h2>
+				<div>
+					<div class="HomeOverflowList">
+						<table>
+							<tbody id="UpdatePerson_SpouseSelectorList">
+								<!--rows below are those which will be dynamically populated in the future-->
+								<tr>
+									<td class="HiddenIDColumn">0</td> <td>Demo</td> <td>Person_1</td> <td>1900-1990</td>
+								</tr>
+								<tr>
+									<td class="HiddenIDColumn">1</td> <td>Demo</td> <td>Person_2</td> <td>1950-2015</td>
+								</tr>
+								<tr>
+									<td class="HiddenIDColumn">2</td> <td>Demo</td> <td>Person_3</td> <td>1980-</td>
+								</tr>
+								<tr>
+									<td class="HiddenIDColumn">3</td> <td>Demo</td> <td>Person_4</td> <td>1990-</td>
+								</tr>
+								<tr>
+									<td class="HiddenIDColumn">4</td> <td>Demo</td> <td>Person_5</td> <td>1995-</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<!--person filtering form-->
+					<form class="HomeFilteringForm">
+						<fieldset>
+							<legend>Filter By</legend>
+							<label>
+								First Name
+								<input type="text" name="">
+							</label>
+							<br>
+							<label>
+								Last Name
+								<input type="text" name="">
+							</label>
+							<br>
+							<label>
+								<input type="submit" name="" value="Filter">
+							</label>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<!--section for adding links to children-->
+		<div class="ContentDivision">
+			<div class="SideBySideDiv">
+				<h2 class="InlineHeadingText">Link to Children</h2>
+				<h2 id="UpdatePerson_ChildToggle" class="InlineHeadingText"></h2>
+				<div class="ExtensibleList">
+					<table>
+						<tbody id="UpdatePerson_ChildLinkList">
+							<!--rows below are those which will be dynamically populated in the future-->
+							<tr>
+								<td class="HiddenIDColumn">3</td> <td>Demo</td> <td>Person_4</td> <td>1990-</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div id="UpdatePerson_ChildSelector" class="SideBySideDiv" display="none">
+				<h2>Select Person</h2>
+				<div>
+					<div class="HomeOverflowList">
+						<table>
+							<tbody id="UpdatePerson_ChildSelectorList">
+								<!--rows below are those which will be dynamically populated in the future-->
+								<tr>
+									<td class="HiddenIDColumn">0</td> <td>Demo</td> <td>Person_1</td> <td>1900-1990</td>
+								</tr>
+								<tr>
+									<td class="HiddenIDColumn">1</td> <td>Demo</td> <td>Person_2</td> <td>1950-2015</td>
+								</tr>
+								<tr>
+									<td class="HiddenIDColumn">2</td> <td>Demo</td> <td>Person_3</td> <td>1980-</td>
+								</tr>
+								<tr>
+									<td class="HiddenIDColumn">3</td> <td>Demo</td> <td>Person_4</td> <td>1990-</td>
+								</tr>
+								<tr>
+									<td class="HiddenIDColumn">4</td> <td>Demo</td> <td>Person_5</td> <td>1995-</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<!--person filtering form-->
+					<form class="HomeFilteringForm">
+						<fieldset>
+							<legend>Filter By</legend>
+							<label>
+								First Name
+								<input type="text" name="">
+							</label>
+							<br>
+							<label>
+								Last Name
+								<input type="text" name="">
+							</label>
+							<br>
+							<label>
+								<input type="submit" name="" value="Filter">
+							</label>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<!--section for adding links to places-->
+		<div class="ContentDivision">
+			<div class="SideBySideDiv">
+				<h2 class="InlineHeadingText">Link to Place(s)</h2>
+				<h2 id="UpdatePerson_PlaceToggle" class="InlineHeadingText"></h2>
+				<div class="ExtensibleList">
+					<table>
+						<tbody id="UpdatePerson_PlaceLinkList">
+							<!--rows below are those which will be dynamically populated in the future-->
+							<tr>
+								<td class="HiddenIDColumn">2</td> <td>Family Ranch</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div id="UpdatePerson_PlaceSelector" class="SideBySideDiv" display="none">
+				<h2>Select Place</h2>
+				<div>
+					<div class="HomeOverflowList">
+						<table>
+							<tbody id="UpdatePerson_PlaceSelectorList">
+								<!--rows below are those which will be dynamically populated in the future-->
+								<tr>
+									<td class="HiddenIDColumn">0</td> <td>Port of Entry</td>
+								</tr>
+								<tr>
+									<td class="HiddenIDColumn">1</td> <td>Homestead</td>
+								</tr>
+								<tr>
+									<td class="HiddenIDColumn">2</td> <td>Family Ranch</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<!--place filtering form-->
+					<form class="HomeFilteringForm">
+						<fieldset>
+							<legend>Filter By</legend>
+							<label>
+								Location
+								<input type="text" name="">
+							</label>
+							<br>
+							<label>
+								Description
+								<input type="text" name="">
+							</label>
+							<br>
+							<label>
+								<input type="submit" name="" value="Filter">
+							</label>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<!--section for adding links to events-->
+		<div class="ContentDivision">
+			<div class="SideBySideDiv">
+				<h2 class="InlineHeadingText">Link to Event(s)</h2>
+				<h2 id="UpdatePerson_EventToggle" class="InlineHeadingText"></h2>
+				<div class="ExtensibleList">
+					<table>
+						<tbody id="UpdatePerson_EventLinkList">
+							<!--rows below are those which will be dynamically populated in the future-->
+							<tr>
+								<td class="HiddenIDColumn">1</td> <td>Person_1 and Person_2 Wedding</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div id="UpdatePerson_EventSelector" class="SideBySideDiv" display="none">
+				<h2>Select Event</h2>
+				<div>
+					<div class="HomeOverflowList">
+						<table>
+							<tbody id="UpdatePerson_EventSelectorList">
+								<!--rows below are those which will be dynamically populated in the future-->
+								<tr>
+									<td class="HiddenIDColumn">0</td> <td>Oregon Trail Journey</td>
+								</tr>
+								<tr>
+									<td class="HiddenIDColumn">1</td> <td>Person_1 and Person_2 Wedding</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<!--event filtering form-->
+					<form class="HomeFilteringForm">
+						<fieldset>
+							<legend>Filter By</legend>
+							<label>
+								Event Name
+								<input type="text" name="">
+							</label>
+							<br>
+							<label>
+								<input type="submit" name="" value="Filter">
+							</label>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<!--section for adding links to photos-->
+		<div class="ContentDivision">
+			<div class="SideBySideDiv">
+				<h2 class="InlineHeadingText">Link to Photo(s)</h2>
+				<h2 id="UpdatePerson_PhotoToggle" class="InlineHeadingText"></h2>
+				<div class="ExtensibleList">
+					<table>
+						<tbody id="UpdatePerson_PhotoLinkList">
+							<tr>
+								<td class="HiddenIDColumn">0</td> <td></td> <td>demo image 1</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div id="UpdatePerson_PhotoSelector" class="SideBySideDiv" display="none">
+				<h2>Select Photo</h2>
+				<div>
+					<div class="HomeOverflowList">
+						<table>
+							<tbody id="UpdatePerson_PhotoSelectorList">
+								<!--rows below are those which will be dynamically populated in the future-->
+								<tr>
+									<td class="HiddenIDColumn">0</td> <td><img src="demo_image_1.jpg" height="20px"></td> <td>demo image 1</td>
+								</tr>
+								<tr>
+									<td class="HiddenIDColumn">1</td> <td><img src="demo_image_2.jpg" height="20px"></td> <td>demo image 2</td>
+								</tr>
+								<tr>
+									<td class="HiddenIDColumn">2</td> <td><img src="demo_image_3.jpg" height="20px"></td> <td>demo image 3</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<!--photo filtering form-->
+					<form class="HomeFilteringForm">
+						<fieldset>
+							<legend>Filter By</legend>
+							<label>
+								photo caption
+								<input type="text" name="">
+							</label>
+							<br>
+							<label>
+								<input type="submit" name="" value="Filter">
+							</label>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<!--javascript files-->
+		<script src="list_functions.js"></script>
+		<script src="update_person_load.js"></script>
+
+	</body>
+</html>
