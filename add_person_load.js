@@ -1,4 +1,5 @@
 //loadSelectorList(toggleID, selectorListID, selectorListBodyID, destinationListBodyID)
+loadSelectorSingleLink("AddPerson_ProfilePhotoToggle", "AddPerson_ProfilePhotoSelector", "AddPerson_ProfilePhotoSelectorList", "AddPerson_ProfilePhotoLink");
 loadSelectorList("AddPerson_ParentToggle", "AddPerson_ParentSelector", "AddPerson_ParentSelectorList", "AddPerson_ParentLinkList");
 loadSelectorList("AddPerson_SpouseToggle", "AddPerson_SpouseSelector", "AddPerson_SpouseSelectorList", "AddPerson_SpouseLinkList");
 loadSelectorList("AddPerson_ChildToggle", "AddPerson_ChildSelector", "AddPerson_ChildSelectorList", "AddPerson_ChildLinkList");

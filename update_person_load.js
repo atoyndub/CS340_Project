@@ -1,4 +1,6 @@
 //loadSelectorList(toggleID, selectorListID, selectorListBodyID, destinationListBodyID)
+loadSelectorSingleLink("UpdatePerson_ProfilePhotoToggle", "UpdatePerson_ProfilePhotoSelector", "UpdatePerson_ProfilePhotoSelectorList", "UpdatePerson_ProfilePhotoLink");
+addRemoveOptionToSelectionListElements("UpdatePerson_ProfilePhotoLink");
 loadSelectorList("UpdatePerson_ParentToggle", "UpdatePerson_ParentSelector", "UpdatePerson_ParentSelectorList", "UpdatePerson_ParentLinkList");
 addRemoveOptionToSelectionListElements("UpdatePerson_ParentLinkList");
 loadSelectorList("UpdatePerson_SpouseToggle", "UpdatePerson_SpouseSelector", "UpdatePerson_SpouseSelectorList", "UpdatePerson_SpouseLinkList");

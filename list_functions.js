@@ -16,20 +16,22 @@ function unhighlightListItem()
 
 function goToPersonProfile(evnt)
 {
-	if (evnt.target.tagName != "BUTTON") //only execute if the column being clicked is not a button column
-		document.location.href = "person_profile.html";
+	document.location.href = "person_profile.html";
 }
 
-function goToPlaceProfile(evnt)
+function goToPlaceProfile()
 {
-	if (evnt.target.tagName != "BUTTON") //only execute if the column being clicked is not a button column
-		document.location.href = "place_profile.html";
+	document.location.href = "place_profile.html";
 }
 
-function goToEventProfile(evnt)
+function goToEventProfile()
 {
-	if (evnt.target.tagName != "BUTTON") //only execute if the column being clicked is not a button column
-		document.location.href = "event_profile.html";
+	document.location.href = "event_profile.html";
+}
+
+function goToPhotoProfile()
+{
+	document.location.href = "photo_profile.html";
 }
 
 function loadList(listBodyID, onClickFunction)
@@ -169,9 +171,108 @@ function addRemoveOptionToSelectionListElements(listBodyID)
 	}
 }
 
+//****************************************
+//toggle/selector single link functions***
+//****************************************
+function loadSelectorSingleLink(toggleID, selectorListID, selectorListBodyID, destinationLinkBodyID)
+{
+	//hide selector list
+	var selectorList = document.getElementById(selectorListID);
+	selectorList.style.display = "none";
+
+	//set up initial state of toggle
+	var toggle = document.getElementById(toggleID);
+	toggle.textContent = "Select";
+	toggle.style.color = "purple";
+	toggle.style.cursor = "pointer";
+	toggle.addEventListener("click", toggleSelectorVisibility.bind(toggle, selectorList));
+
+	//set event listeners and pointer style for each dynamically populated row
+	var destinationLinkBody = document.getElementById(destinationLinkBodyID);
+	var selectorListBody = document.getElementById(selectorListBodyID);
+	var currentRow = selectorListBody.firstElementChild;
+	while (currentRow)
+	{
+		currentRow.addEventListener("mouseenter", highlightListItem.bind(currentRow));
+		currentRow.addEventListener("mouseleave", unhighlightListItem.bind(currentRow));
+		currentRow.addEventListener("click", replaceSingleLink.bind(currentRow, destinationLinkBody));
+		currentRow.style.cursor = "pointer";
+		currentRow = currentRow.nextElementSibling;
+	}
+}
+
+//assumes this is a row in the selector list
+function replaceSingleLink(destinationLinkBody)
+{
+	//get the hidden ID of the selected row
+	var currentColumn = this.firstElementChild;
+	var rowID = currentColumn.textContent;
+
+	//copy remaining columns from the selected row
+	var columnsList = [];
+	currentColumn = currentColumn.nextElementSibling;
+	do
+	{
+		columnsList.push(currentColumn.textContent);
+		currentColumn = currentColumn.nextElementSibling;
+	} while (currentColumn);
+
+	//check whether a row w/ same ID already exists in the destination table
+	var currentRow = destinationLinkBody.firstElementChild;
+	var matchFound = false;
+	if (currentRow)
+	{
+		if (currentRow.firstElementChild.textContent == rowID)
+			matchFound = true;
+	}
+
+	//paste copied columns into other table if no match was found
+	if (!matchFound)
+	{
+		if (currentRow)
+			currentRow.remove();
+
+		var newRow = document.createElement("tr");
+		var newColumn = document.createElement("td");
+		newColumn.textContent = rowID;
+		newColumn.style.visibility = "collapse";
+		newRow.appendChild(newColumn);
+		for (var i = 0; i < columnsList.length; i++)
+		{
+			newColumn = document.createElement("td");
+			newColumn.textContent = columnsList[i]
+			newRow.appendChild(newColumn);
+		}
+		newColumn = document.createElement("td");
+		newColumn.textContent = "remove";
+		newColumn.style.color = "purple";
+		newColumn.style.cursor = "pointer";
+		newColumn.addEventListener("click", removeRowFromSelectionList.bind(newRow));
+
+		newRow.appendChild(newColumn);
+		destinationLinkBody.appendChild(newRow);
+	}
+}
+
 //*****************************
-//***photo gallery functions***
+//***gallery photo functions***
 //*****************************
+
+function highlightGalleryImage()
+{
+	this.style.borderStyle = "solid";
+	this.style.borderColor = "green";
+}
+
+function unhighlightGalleryImage()
+{
+	this.style.borderStyle = "none";
+}
+
+function navigateToGalleryImage()
+{
+	document.location.href = "photo_profile.html";
+}
 
 function loadGallery(galleryParentID)
 {
@@ -180,34 +281,9 @@ function loadGallery(galleryParentID)
 	while (currentImage)
 	{
 		currentImage.addEventListener("mouseenter", highlightGalleryImage.bind(currentImage));
+		currentImage.addEventListener("mouseleave", unhighlightGalleryImage.bind(currentImage));
 		currentImage.addEventListener("click", navigateToGalleryImage.bind(currentImage));
 		currentImage.style.cursor = "pointer";
 		currentImage = currentImage.nextElementSibling;
 	}
-}
-
-function highlightGalleryImage()
-{
-	//highlight the current list item
-	var currentImage = this
-	currentImage.style.borderStyle = "solid";
-
-	//remove any highlight from all other rows
-	currentImage = currentImage.nextElementSibling;
-	while (currentImage)
-	{
-		currentImage.style.borderStyle = "none";
-		currentImage = currentImage.nextElementSibling;
-	}
-	currentImage = this.previousElementSibling;
-	while (currentImage)
-	{
-		currentImage.style.borderStyle = "none";
-		currentImage = currentImage.previousElementSibling;
-	}
-}
-
-function navigateToGalleryImage()
-{
-	document.location.href = "photo_profile.html";
 }

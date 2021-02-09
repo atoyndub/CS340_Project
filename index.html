@@ -140,6 +140,49 @@
 			</form>
 		</div>
 
+		<h2 class="InlineHeadingText">Photos</h2>
+		<h2 class="InlineHeadingText">
+			<a href="add_photo.html">Add New</a>
+		</h2>
+		<div class="HomeContentDivision">
+
+			<!--dynamically generated list of photos-->
+			<div class="HomeOverflowList">
+				<table>
+					<tbody id="HomePhotosList">
+						<!--rows below are those which will be dynamically populated in the future-->
+						<tr>
+							<td><img src="demo_image_1.jpg" height="20px"></td> <td>demo image 1</td>
+						</tr>
+						<tr>
+							<td><img src="demo_image_2.jpg" height="20px"></td> <td>demo image 2</td>
+						</tr>
+						<tr>
+							<td><img src="demo_image_3.jpg" height="20px"></td> <td>demo image 3</td>
+						</tr>
+						<tr>
+							<td><img src="demo_profile_image.jpg" height="20px"></td> <td>demo profile image</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<!--photo filtering form-->
+			<form class="HomeFilteringForm">
+				<fieldset>
+					<legend>Filter By</legend>
+					<label>
+						photo caption
+						<input type="text" name="">
+					</label>
+					<br>
+					<label>
+						<input type="submit" name="" value="Filter">
+					</label>
+				</fieldset>
+			</form>
+		</div>
+
 		<!--javascript files-->
 		<script src="list_functions.js"></script>
 		<script src="index_load.js"></script>
